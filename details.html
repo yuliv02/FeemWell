@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistik Menstruasi Detail</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Statistik Menstruasi</h2>
+        <form id="detail-form">
+            <div class="mb-3">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="mb-3">
+                <label for="age">Usia:</label>
+                <input type="number" id="age" min="10" max="99" placeholder="Masukkan usia Anda" required>
+            </div>
+            <div class="mb-3">
+                <label for="last-period">Tanggal Mulai Haid Terakhir:</label>
+                <input type="date" id="last-period" required>
+            </div>
+            <div class="mb-3">
+                <label for="cycle-length">Rata-rata Panjang Siklus (hari):</label>
+                <input type="number" id="cycle-length" min="21" max="35" required>
+            </div>
+            <button type="submit" class="btn">Kirim</button>
+        </form>
+        
+        <div id="stats-output"></div>
+
+        <!-- Button to go back to Home -->
+        <div class="text-center">
+            <a href="index.html" class="btn-home">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("detail-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+    
+            // Mengambil input dari pengguna
+            const name = document.getElementById("name").value;
+            const age = parseInt(document.getElementById("age").value, 10);
+            const lastPeriod = document.getElementById("last-period").value;
+            const cycleLength = parseInt(document.getElementById("cycle-length").value, 10);
+    
+            // Validasi
+            if (!name || isNaN(age) || !lastPeriod || isNaN(cycleLength)) {
+                alert("Harap isi semua kolom dengan benar.");
+                return;
+            }
+    
+            // Kalkulasi
+            const lastDate = new Date(lastPeriod);
+            const nextPeriod = new Date(lastDate);
+            nextPeriod.setDate(lastDate.getDate() + cycleLength);
+    
+            const fertileStart = new Date(lastDate);
+            fertileStart.setDate(lastDate.getDate() + 11);
+            const fertileEnd = new Date(lastDate);
+            fertileEnd.setDate(lastDate.getDate() + 17);
+    
+            // Saran berdasarkan umur
+            let ageAdvice = "";
+            if (age < 18) {
+                ageAdvice = "Karena Anda berusia di bawah 18 tahun, penting untuk memahami masa pubertas dan perubahan hormonal. Catat siklus Anda seiring dengan perkembangan tubuh.";
+            } else if (age >= 18 && age <= 40) {
+                ageAdvice = "Pada usia Anda, menjaga siklus yang teratur sangat penting. Konsultasikan dengan tenaga medis jika Anda mengalami ketidakteraturan.";
+            } else if (age > 40) {
+                ageAdvice = "Pada usia 40+, Anda mungkin mengalami gejala perimenopause atau menopause. Pantau kesehatan Anda dan konsultasikan dengan tenaga medis jika diperlukan.";
+            }
+    
+            // Statistik global rata-rata panjang siklus
+            const globalCycleAverage = 28; // Rata-rata panjang siklus menstruasi global
+    
+            // Fakta menarik tentang kesehatan menstruasi
+            const healthFact = "Tahukah Anda? Menurut penelitian, 75% wanita di seluruh dunia pernah mengalami ketidaknyamanan menstruasi, seperti kram perut atau perubahan suasana hati.";
+    
+            // Pertanyaan tambahan dan informasi kesehatan
+            const questions = `
+                <h3>Pertanyaan Tambahan:</h3>
+                <ul>
+                    <li><a href="#!" onclick="showInfo('Siklus tidak teratur')">Apakah siklus menstruasi Anda tidak teratur? Ayok cek di sini.</a></li>
+                    <li><a href="#!" onclick="showInfo('Telat 1 bulan')">Apa penyebab menstruasi telat 1 bulan?</a></li>
+                    <li><a href="#!" onclick="showInfo('Telat 2 bulan')">Apa penyebab menstruasi telat 2 bulan?</a></li>
+                    <li><a href="#!" onclick="showInfo('Telat 3 bulan')">Apa penyebab menstruasi telat 3 bulan?</a></li>
+                    <li><a href="#!" onclick="showInfo('Telat 4 bulan')">Apa penyebab menstruasi telat 4 bulan?</a></li>
+                    <li><a href="#!" onclick="showInfo('Telat 5 bulan')">Apa penyebab menstruasi telat 5 bulan?</a></li>
+                    <li><a href="#!" onclick="showInfo('Telat 6 bulan')">Apa penyebab menstruasi telat 6 bulan?</a></li>
+                </ul>
+                <div id="additional-info" style="margin-top: 20px;"></div>
+            `;
+    
+            // Menampilkan hasil
+            document.getElementById("stats-output").innerHTML = `
+                <h3>Halo, ${name}!</h3>
+                <p><strong>Tanggal Mulai Haid Terakhir:</strong> ${lastDate.toDateString()}</p>
+                <p><strong>Tanggal Perkiraan Haid Berikutnya:</strong> ${nextPeriod.toDateString()}</p>
+                <p><strong>Perkiraan Masa Subur:</strong> ${fertileStart.toDateString()} - ${fertileEnd.toDateString()}</p>
+                <p>Rata-rata panjang siklus Anda adalah <strong>${cycleLength} hari</strong>.</p>
+                <p>Rata-rata panjang siklus menstruasi global adalah <strong>${globalCycleAverage} hari</strong>.</p>
+                <h3>Saran Berdasarkan Usia:</h3>
+                <p>${ageAdvice}</p>
+                <h3>Fakta Menarik:</h3>
+                <p>${healthFact}</p>
+                ${questions}
+            `;
+        });
+    
+        // Menampilkan informasi tambahan berdasarkan pertanyaan yang dipilih
+        function showInfo(topic) {
+            const infoContent = {
+                "Siklus tidak teratur": "Siklus menstruasi yang tidak teratur dapat disebabkan oleh stres, gangguan hormonal, atau kondisi medis tertentu. Sebaiknya konsultasikan dengan dokter untuk evaluasi lebih lanjut.",
+                "Telat 1 bulan": "Telat 1 bulan bisa disebabkan oleh perubahan hormonal, stres, perubahan berat badan yang drastis, atau kehamilan. Sebaiknya lakukan tes kehamilan jika Anda aktif secara seksual.",
+                "Telat 2 bulan": "Telat 2 bulan dapat mengindikasikan masalah hormon seperti sindrom ovarium polikistik (PCOS) atau gangguan tiroid. Konsultasikan dengan dokter untuk diagnosis yang lebih tepat.",
+                "Telat 3 bulan": "Telat 3 bulan berturut-turut disebut amenore. Penyebabnya bisa mencakup stres berat, olahraga berlebihan, kehamilan, atau kondisi medis tertentu. Segera konsultasikan dengan dokter.",
+                "Telat 4 bulan": "Telat 4 bulan bisa disebabkan oleh gangguan hormonal yang lebih serius seperti masalah dengan kelenjar tiroid, atau gangguan reproduksi. Konsultasikan dengan dokter untuk evaluasi lebih lanjut.",
+                "Telat 5 bulan": "Telat 5 bulan dapat disebabkan oleh masalah yang lebih kompleks seperti perimenopause atau pengaruh obat-obatan tertentu. Segera konsultasikan dengan dokter atau spesialis ginekologi.",
+                "Telat 6 bulan": "Telat 6 bulan atau lebih dapat disebabkan oleh masalah medis yang signifikan seperti amenore hipotalamik atau sindrom ovarium polikistik (PCOS). Ini memerlukan perhatian medis segera.",
+            };
+    
+            const prevention = `
+                <h4>Pencegahan:</h4>
+                <ul>
+                    <li>Konsumsi makanan bergizi dan seimbang.</li>
+                    <li>Kelola stres dengan baik melalui meditasi atau aktivitas relaksasi.</li>
+                    <li>Olahraga secara teratur, tetapi jangan berlebihan.</li>
+                    <li>Periksakan diri secara rutin ke dokter.</li>
+                </ul>
+                <p>Informasi lebih lanjut tentang kesehatan menstruasi dapat ditemukan di <strong>Tips Kesehatan</strong>.</p>
+            `;
+    
+            const displayContent = `
+                <h3>Informasi tentang "${topic}":</h3>
+                <p>${infoContent[topic]}</p>
+                ${prevention}
+            `;
+    
+            document.getElementById("additional-info").innerHTML = displayContent;
+        }
+    </script>
+</body>
+</html>

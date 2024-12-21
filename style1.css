@@ -1,0 +1,173 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #e9b2bf; /* Warna background pink */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #c11010;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Paragraph and List Styling */
+p, ul {
+    margin-bottom: 1.5em;
+    font-size: 1.1rem;
+}
+
+a {
+    color: #c11010;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.mb-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.mb-3 label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.mb-3 input,
+.mb-3 select {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box; /* Agar form input lebih simetris */
+}
+
+.mb-3 input:focus,
+.mb-3 select:focus {
+    border-color: #c11010;
+    outline: none;
+    box-shadow: 0 0 5px rgba(193, 16, 16, 0.3);
+}
+
+/* Button Styling */
+button.btn {
+    background: #c11010;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button.btn:hover {
+    background-color: #9a0e0e;
+    transform: scale(1.05);
+}
+
+button.btn:active {
+    background-color: #a21818;
+}
+
+/* Stats Output Styling */
+#stats-output {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f4f4f4;
+    border-left: 6px solid #c11010;
+    border-radius: 8px;
+}
+
+#stats-output h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+#stats-output ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+#stats-output li {
+    margin-bottom: 10px;
+}
+
+/* Button Back to Home */
+.btn-home {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    width: auto; /* Tombol menyesuaikan ukuran dengan teks */
+}
+
+.btn-home:hover {
+    background-color: #4caf50;
+    transform: scale(1.05);
+}
+
+.btn-home:active {
+    background-color: #4caf50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    form {
+        gap: 1rem;
+    }
+
+    button.btn {
+        font-size: 0.95rem;
+        padding: 10px 18px;
+    }
+
+    .btn-home {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+
+    #stats-output {
+        margin-top: 25px;
+        padding: 15px;
+    }
+}

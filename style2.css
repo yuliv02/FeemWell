@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #c11010;
+}
+
+/* Card Styling */
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.card-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #c11010;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #d6688e;
+}
+
+.btn-back-home {
+    background-color: #4caf50;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-back-home:hover {
+    background-color: #45a049;
+}
+
+/* Back to Home Section */
+.back-to-home {
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-image {
+        margin-top: 10px;
+        margin-left: 0;
+        max-width: 100%;
+    }
+}

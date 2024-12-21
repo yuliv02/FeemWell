@@ -1,0 +1,521 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #fef6f8;
+    line-height: 1.6;
+}
+
+.text-pink {
+    color: #c11010;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #c11010 !important;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    margin: 0 15px;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f78da7 !important;
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero.jpg') center/cover no-repeat;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+/* Mengubah warna h1 */
+#home h1 {
+    color: #d53c62; /* Pink */
+}
+
+/* Mengubah warna p */
+#home p {
+    color: #d53c62; /* Green */
+}
+
+.hero .btn {
+    background-color: #c11010;
+    border: none;
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #d53c62;
+    transform: scale(1.1);
+}
+
+/* Menstrual Tracker Section */
+#tracker {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+    border-top: 4px solid #c11010;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+#tracker h2 {
+    font-size: 2.8rem;
+    color: #c11010;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: slideInLeft 1s ease-out;
+}
+
+.tracker-description {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.card-info {
+    background-color: #fef6f8;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 2s ease-out;
+}
+
+.card-info:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #dc456b;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.card-text {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.tracker-note {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+.cta-text {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 40px;
+    font-weight: 600;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Contact Section */
+#contact {
+    padding: 70px 0;
+    background-color: #fef6f8;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.8rem;
+    color: #f78da7;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+#contact input,
+#contact textarea {
+    border: 2px solid #fcb6d2;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #f78da7;
+    outline: none;
+}
+
+#contact button {
+    background-color: #f78da7;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #fcb6d2;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #f78da7;
+    color: #000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-weight: 300;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-info {
+        margin-bottom: 20px;
+    }
+
+    .read-more {
+        width: 100%;
+    }
+
+    #contact input,
+    #contact textarea {
+        font-size: 1rem;
+    }
+}
+
+/* Mengubah warna latar belakang seluruh body */
+body {
+    background-color: #fcb6d2;
+}
+
+/* Mengubah warna latar belakang hero (header) */
+.hero {
+    background: url('hero.jpg') center/cover no-repeat;
+    background-color: #fcb6d2; /* Menambahkan warna latar belakang */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Navbar - tidak ada perubahan warna pada navbar */
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    padding: 15px 30px;
+}
+
+/* Menstrual Tracker Section */
+#tracker {
+    background-color: #ffd5e6; /* Menambahkan warna latar belakang */
+}
+
+/* Fertility Section */
+#fertility {
+    background: linear-gradient(to bottom, #fcb6d2, #fff); /* Menggunakan gradien */
+}
+
+/* Contact Section */
+#contact {
+    background-color: #fcb6d2; /* Menambahkan warna latar belakang */
+}
+
+/* Footer */
+footer {
+    background-color: #fcb6d2; /* Menambahkan warna latar belakang */
+    color: #000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-weight: 300;
+}
+
+footer .copyright {
+    color: #c11010; /* Warna merah muda */
+    font-weight: bold; /* Membuat teks lebihS tebal */
+}
+
+/* Mengubah warna teks Pelacak Menstruasi */
+.pelacak-text {
+    color: #c11010; /* Warna merah muda, ganti dengan warna pilihan Anda */
+}
+
+/* Animasi untuk transisi */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi pada elemen */
+[data-aos="fade-up"] {
+    animation: fadeUp 1s ease-out forwards;
+}
+
+[data-aos="fade-left"] {
+    animation: fadeLeft 1s ease-out forwards;
+}
+
+[data-aos="fade-right"] {
+    animation: fadeRight 1s ease-out forwards;
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Gaya untuk Call to Action */
+.cta-text {
+    font-size: 1.4rem;
+    color: #c11010; /* Warna merah muda */
+    margin-top: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.cta-text p {
+    color: #c11010; /* Merah muda */
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tombol "Yuk Cari Tahu" */
+.read-more {
+    background-color: #c11010;
+    border: none;
+    padding: 12px 35px;
+    font-size: 1.3rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+    margin-top: 30px;
+}
+
+.read-more:hover {
+    background-color: #fcb6d2;
+    transform: scale(1.1);
+}
+
+/* Perbaiki animasi untuk Card */
+.card-info {
+    background-color: #fef6f8;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+.card-info:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Perbaikan untuk pelacak teks */
+.pelacak-text {
+    color: #f78da7; /* Warna merah muda */
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Untuk description */
+.tracker-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.tracker-note {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+/* General Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Gaya untuk teks health tips */
+.health-tips-text {
+    font-size: 2.7Srem; /* Ukuran font lebih besar */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Gaya untuk teks berwarna hitam */
+.text-black {
+    color: #010101; /* Warna hitam */
+}
+
+/* Gaya untuk teks berwarna merah */
+.text-red {
+    color: #c11010; /* Warna merah muda */
+}
+
+/* Gaya untuk card */
+.tips-card {
+    background-color: #fff; /* Warna latar belakang card */
+    border-radius: 10px; /* Membuat sudut card melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan agar card lebih menonjol */
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Gaya untuk teks "Ingin tahu lebih banyak tips kesehatan?" */
+.tips-card h3 {
+    font-size: 2rem; /* Ukuran font lebih besar */
+    color: #333; /* Warna hitam */
+}
+
+/* Gaya untuk tombol link "Jelajahi lebih lanjut di sini!" */
+.tips-card .btn-danger {
+    background-color: #c11010; /* Warna merah muda */
+    border-color: #f78da7;
+    font-size: 1.25rem; /* Ukuran font lebih besar */
+    padding: 15px 30px; /* Lebar tombol */
+    border-radius: 5px; /* Sudut tombol melengkung */
+}
+
+.tips-card .btn-danger:hover {
+    background-color: #f06475; /* Warna merah sedikit lebih gelap saat hover */
+    border-color: #f06475;
+}

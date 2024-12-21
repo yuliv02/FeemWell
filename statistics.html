@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="py-5">
+        <div class="container">
+            <h1>Your Menstrual Statistics</h1>
+            <div id="stats-output"></div>
+            <h3>Potential Concerns</h3>
+            <div id="concerns"></div>
+        </div>
+    </section>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const lastPeriod = params.get('lastPeriod');
+        const cycleLength = parseInt(params.get('cycleLength'), 10);
+        const name = params.get('name');
+        const age = params.get('age');
+
+        function calculateStatistics() {
+            if (!lastPeriod || isNaN(cycleLength)) {
+                document.getElementById('stats-output').innerHTML = 'Invalid data provided.';
+                return;
+            }
+
+            const lastDate = new Date(lastPeriod);
+            const nextPeriod = new Date(lastDate);
+            nextPeriod.setDate(lastDate.getDate() + cycleLength);
+
+            const fertileStart = new Date(lastDate);
+            fertileStart.setDate(lastDate.getDate() + 11);
+            const fertileEnd = new Date(lastDate);
+            fertileEnd.setDate(lastDate.getDate() + 17);
+
+            document.getElementById('stats-output').innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Last Period Start Date:</strong> ${lastDate.toDateString()}</p>
+                <p><strong>Next Period Start Date:</strong> ${nextPeriod.toDateString()}</p>
+                <p><strong>Fertile Window:</strong> ${fertileStart.toDateString()} - ${fertileEnd.toDateString()}</p>
+            `;
+        }
+
+        function checkConcerns() {
+            const randomIssues = Math.random() < 0.5; // Simulasi masalah
+            if (randomIssues) {
+                document.getElementById('concerns').innerHTML = `
+                    <p><strong>Note:</strong> Your last three cycles show irregularities. We recommend consulting a doctor.</p>
+                `;
+            } else {
+                document.getElementById('concerns').innerHTML = '<p>Your cycle data appears normal.</p>';
+            }
+        }
+
+        calculateStatistics();
+        checkConcerns();
+    </script>
+</body>
+</html>
